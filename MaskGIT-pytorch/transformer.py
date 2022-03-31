@@ -5,8 +5,8 @@ from bidirectional_transformer import BidirectionalTransformer
 # from vqgan import VQGAN
 import numpy as np
 import sys
-sys.path.insert(0, '/home/ygong2832/taming-transformers')
-sys.path.insert(0, '/home/ygong2832/taming-transformers/taming')
+sys.path.insert(0, './taming-transformers')
+sys.path.insert(0, './taming-transformers/taming')
 from models.vqgan import VQModel
 from omegaconf import OmegaConf
 
@@ -14,7 +14,7 @@ from omegaconf import OmegaConf
 # +
 class VQGANTransformer(nn.Module):
     def __init__(self, args):
-        super().__init__()
+        super(VQGANTransformer, self).__init__()
 
         self.sos_token = args.sos_token
 
@@ -41,11 +41,11 @@ class VQGANTransformer(nn.Module):
 #         model = model.eval()
 #         return model
     
-    def load_checkpoint(self, path):
+    def load_checkpoint2(self, path):
         self.load_state_dict(torch.load(path))
         print("Loaded Checkpoint for VQGANTransformer....")
         
-    def load_vqgan(args):
+    def load_vqgan(self, args):
         config = OmegaConf.load(args.config_path)
         model = VQModel(**config.model.params)
         sd = torch.load(args.checkpoint_path, map_location="cpu")["state_dict"]
