@@ -25,6 +25,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torchvision import utils as vutils
 from transformer import VQGANTransformer
+from utils import load_testdata
 # from utils import load_data, plot_images
 import sys
 sys.path.insert(0, './taming-transformers')
@@ -50,17 +51,16 @@ class TestTransformer:
     
     def load_transformer(self, args):
         model = VQGANTransformer(args)
-        print(args.transformer_checkpoint_path)
-        sd = torch.load(args.transformer_checkpoint_path, map_location="cpu")["state_dict"]
+        sd = torch.load(args.transformer_checkpoint_path, map_location="cpu") #["state_dict"]
         missing, unexpected = model.load_state_dict(sd, strict=False)   
 #         model.load_checkpoint2(path=args.transformer_checkpoint_path)
         model = model.eval()
         return model
     
-    def load_testdata(self, args):
-        test_data = ImagePaths(args.test_dataset_path, size=256)
-        test_loader = DataLoader(test_data, batch_size=args.batch_size, shuffle=False)
-        return test_loader
+#     def load_testdata(self, args):
+#         test_data = ImagePaths(args.test_dataset_path, size=256)
+#         test_loader = DataLoader(test_data, batch_size=args.batch_size, shuffle=False)
+#         return test_loader
     
 #     def test(self, args):
 #         test_dataset = load_data(args)
@@ -75,7 +75,7 @@ class TestTransformer:
  
 
     def calculate_inception_score(self, args, n_split=10, eps=1E-16):
-        image = self.load_testdata(args) ## 改arg里数据来源
+        image = load_testdata(self, args) ## 改arg里数据来源
         image=image.to(device=args.device) #?? 可能不需要
         shuffle(test_dataset)
         
@@ -92,6 +92,9 @@ class TestTransformer:
             
             log, sampled_imgs = self.model.log_images(subset[:][None])
             p_yx = log["rec"] #有可能是2，因为多个图片会多一个维度，rec变为2
+            
+            print("log rec dim:",log["rec"].shape)
+            print("sampled_imgs dim:",sampled_imgs.shape)
             
             # calculate p(y)
             p_y = expand_dims(p_yx.mean(axis=0), 0)
