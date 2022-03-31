@@ -27,8 +27,8 @@ from torchvision import utils as vutils
 from transformer import VQGANTransformer
 # from utils import load_data, plot_images
 import sys
-sys.path.insert(0, '/home/ygong2832/taming-transformers')
-sys.path.insert(0, '/home/ygong2832/taming-transformers/taming')
+sys.path.insert(0, './taming-transformers')
+sys.path.insert(0, './taming-transformers/taming')
 # import model
 class TestTransformer:
     def __init__(self, args):
@@ -142,10 +142,9 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
     args.dataset_path = r"/home/ygong2832/file/ILSVRC/Data/CLS-LOC/train_sub2"
-    args.checkpoint_path = r"./taming-transformers/logs/vqgan_imagenet_f16_16384/checkpoints/last.ckpt"
-    args.config_path = r"./taming-transformers/logs/vqgan_imagenet_f16_16384/configs/model.yaml"
-    args.transformer_checkpoint_path = r"./checkpoints/transformer_epoch_30.pt"
-#     r"/home/ygong2832/checkpoints/transformer_epoch_39.pt"
+    args.checkpoint_path = r"/home/ygong2832/taming-transformers/logs/vqgan_imagenet_f16_16384/checkpoints/last.ckpt"
+    args.config_path = r"/home/ygong2832/taming-transformers/logs/vqgan_imagenet_f16_16384/configs/model.yaml"
+    args.transformer_checkpoint_path = r"/home/ygong2832/checkpoints/transformer_epoch_39.pt"
     args.test_dataset_path = r"/home/ygong2832/file/ILSVRC/Data/CLS-LOC/test_sub"
 
     testpic = TestTransformer(args)

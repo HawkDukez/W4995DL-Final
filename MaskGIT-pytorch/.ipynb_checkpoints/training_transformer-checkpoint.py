@@ -93,7 +93,7 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
     args.dataset_path = r"/home/ygong2832/file/ILSVRC/Data/CLS-LOC/train_sub2"
-    args.checkpoint_path = r"./taming-transformers/logs/vqgan_imagenet_f16_16384/checkpoints/last.ckpt"
-    args.config_path = r"./taming-transformers/logs/vqgan_imagenet_f16_16384/configs/model.yaml"
+    args.checkpoint_path = r"/home/ygong2832/taming-transformers/logs/vqgan_imagenet_f16_16384/checkpoints/last.ckpt"
+    args.config_path = r"/home/ygong2832/taming-transformers/logs/vqgan_imagenet_f16_16384/configs/model.yaml"
 
     train_transformer = TrainTransformer(args)
