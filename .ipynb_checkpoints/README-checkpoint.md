@@ -12,7 +12,8 @@ Reference: https://arxiv.org/abs/2202.04200
 ## Code Reference
 We adopted the MaskGIT pipeline from dome272's github repo: https://github.com/dome272/MaskGIT-pytorch, and change the VAGAN model to an ImageNet-pretrained model [VQModel](https://github.com/CompVis/taming-transformers).
 
-The adopted pipelines are in the [MaskGIT-pytorch](/MaskGIT-pytorch/) folder. And the final excutive command could be found in [trainTransformer.ipynb](./trainTransformer.ipynb).
+* The adopted pipelines folder: [MaskGIT-pytorch](/MaskGIT-pytorch/) 
+* The final excutive command: [trainTransformer.ipynb](./trainTransformer.ipynb)
 
 * Pretrained VQGAN model parameter: [vqgan_imagenet_f16_16384](./taming-transformers/logs/vqgan_imagenet_f16_16384/)
 
