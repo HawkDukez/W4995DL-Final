@@ -1,3 +1,16 @@
+"""
+#######################################################################################################################
+## The model codes is git cloned from repo: https://github.com/dome272/MaskGIT-pytorch                               ##
+## Access date: 3/25/2022                                                                                            ##
+## Modifications:                                                                                                    ##
+## 1. Changed vqgan model to ImageNet Pretrained VQModel. Model repo: https://github.com/CompVis/taming-transformers ##
+## 2. Added pretrained MaskGIT model loading function load_checkpoints2 to resume model training                     ##
+## 3. VQGAN model output changed due to adopt new model                                                              ##
+## 4. self.transformer edited to adopt larger token size in new VQModel                                              ##
+## 5. gamma_func, top_k_logits, sample, and log_images debugged                                                      ##
+#######################################################################################################################
+"""
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -5,8 +18,8 @@ from bidirectional_transformer import BidirectionalTransformer
 # from vqgan import VQGAN
 import numpy as np
 import sys
-sys.path.insert(0, './taming-transformers')
-sys.path.insert(0, './taming-transformers/taming')
+sys.path.insert(0, '/home/ygong2832/taming-transformers')
+sys.path.insert(0, '/home/ygong2832/taming-transformers/taming')
 from models.vqgan import VQModel
 from omegaconf import OmegaConf
 

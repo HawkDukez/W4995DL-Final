@@ -1,3 +1,13 @@
+"""
+################################################
+## The utils codes is git cloned from repo:   ##
+## https://github.com/dome272/MaskGIT-pytorch ##
+## Access date: 3/25/2022                     ##
+## Modifications:                             ##
+## 1. load_testdata function added            ##
+################################################
+"""
+
 import os
 import albumentations
 import numpy as np

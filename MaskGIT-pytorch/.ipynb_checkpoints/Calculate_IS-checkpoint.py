@@ -1,6 +1,15 @@
 #!/usr/bin/env python
 # coding: utf-8
 # %%
+"""
+################################################
+## This is the model testing code with FID    ##
+## and IS calculated.                         ##
+## Author: Baode Gao, Yiru Gong               ##
+################################################
+"""
+
+# %%
 from math import floor
 from numpy import ones
 from numpy import expand_dims

@@ -20,7 +20,7 @@ We adopted the MaskGIT pipeline from dome272's github repo: https://github.com/d
 ## What we do
 - [x] Debug the gamma functions
 - [x] Adopted pretrained VQGAN Model
-- [ ] Add test class and calculate evaluation metric (FID, IS)
+- [x] Add test class and calculate evaluation metric (FID, IS)
 - [ ] Train on the entire ImageNet dataset
 - [ ] Adopt to audio/video data
 

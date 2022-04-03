@@ -1,3 +1,14 @@
+"""
+################################################
+## The model codes is git cloned from repo:   ##
+## https://github.com/dome272/MaskGIT-pytorch ##
+## Access date: 3/25/2022                     ##
+## Modifications:                             ##
+## 1. New VQModel path added                  ##
+## 2. dataset path edited                     ##
+################################################
+"""
+
 import os
 import numpy as np
 from tqdm import tqdm
@@ -9,8 +20,8 @@ from torchvision import utils as vutils
 from transformer import VQGANTransformer
 from utils import load_data, plot_images
 import sys
-sys.path.insert(0, './taming-transformers')
-sys.path.insert(0, './taming-transformers/taming')
+sys.path.insert(0, '/home/ygong2832/taming-transformers')
+sys.path.insert(0, '/home/ygong2832/taming-transformers/taming')
 
 
 class TrainTransformer:
@@ -97,3 +108,5 @@ if __name__ == '__main__':
     args.config_path = r"/home/ygong2832/taming-transformers/logs/vqgan_imagenet_f16_16384/configs/model.yaml"
 
     train_transformer = TrainTransformer(args)
+
+
