@@ -10,7 +10,7 @@
 ## Environment Preparation
 Here we use the environment provided by [SpecVQGAN](https://github.com/v-iashin/SpecVQGAN#environment-preparation).
 
-## Conda
+### Conda
 ```bash
 conda env create -f conda_env.yml
 ```
@@ -37,7 +37,7 @@ The no-feats pretrained SpecVQGAN model is used as our pretrained vqgan model.
 * Model: [2021-06-20T16-24-38_vas_transformer]('https://a3s.fi/swift/v1/AUTH_a235c0f452d648828f745589cde1219a/specvqgan_public/models/2021-06-20T16-24-38_vas_transformer.tar.gz')
 
 Our Model after training:
-* [transformer_epoch_39.pt](/audio_model/checkpoints/transformer_epoch_39.pt)
+* transformer_epoch_39.pt (Please contact the author for model checkpoints)
 
 
 ## Training
@@ -71,4 +71,4 @@ python ./visual_example.py --batch-size=1 --num-codebook-vectors=265 --epochs=40
 ```
 #### Githubs:
 1. https://github.com/v-iashin/SpecVQGAN
-2. 
+2. https://github.com/dome272/MaskGIT-pytorch

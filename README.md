@@ -9,6 +9,10 @@ Reference: https://arxiv.org/abs/2202.04200
 <img width="718" alt="workflow" src="/asset/Mask.png">
 </p>
 
+<p align="center">
+<img width="718" alt="workflow" src="/asset/spec.png">
+</p>
+
 ## Code Reference
 We adopted the MaskGIT pipeline from dome272's github repo: https://github.com/dome272/MaskGIT-pytorch, and change the VAGAN model to an ImageNet-pretrained model [VQModel](https://github.com/CompVis/taming-transformers) for image generation, and an VAS vedio spectrum-pretrained model [SpecVQGAN](https://github.com/v-iashin/SpecVQGAN).
 
@@ -44,13 +48,18 @@ python ./training_transformer.py --batch-size=8 --num-codebook-vectors=265 --epo
 ## Results
 ### Image generation
 <p align="center">
-<img width="718" alt="workflow" src="/results/39.jpg">
+<img width="718" alt="workflow" src="/image_model/results/39.jpg">
 </p>
+
 
 ### Model saved
 
-[transformer_epoch_30.pt](./checkpoints/)
+#### Image model:
+[transformer_epoch_30.pt](/image_model/checkpoints/)
+
 
 ### Audio generation
 
-
+<p align="center">
+<img width="718" alt="workflow" src="/audio_model/test/images/14.jpg">
+</p>
