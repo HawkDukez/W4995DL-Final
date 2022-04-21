@@ -18,7 +18,8 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torchvision import utils as vutils
 from transformer import VQGANTransformer
-from utils import load_data, plot_images
+#from utils import load_data, plot_images
+from utils_audio import load_data, plot_images
 import sys
 sys.path.insert(0, '/home/ygong2832/taming-transformers')
 sys.path.insert(0, '/home/ygong2832/taming-transformers/taming')
@@ -103,7 +104,8 @@ if __name__ == '__main__':
     parser.add_argument('--sos-token', type=int, default=0, help='Start of Sentence token.')
 
     args = parser.parse_args()
-    args.dataset_path = r"/home/ygong2832/file/ILSVRC/Data/CLS-LOC/train_sub2"
+    #args.dataset_path = r"/home/ygong2832/file/ILSVRC/Data/CLS-LOC/train_sub2"
+    args.dataset_path = r"/home/ygong2832/audio/SpecVQGAN/data/vas/baby"
     args.checkpoint_path = r"/home/ygong2832/taming-transformers/logs/vqgan_imagenet_f16_16384/checkpoints/last.ckpt"
     args.config_path = r"/home/ygong2832/taming-transformers/logs/vqgan_imagenet_f16_16384/configs/model.yaml"
 
